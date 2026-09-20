@@ -1,0 +1,51 @@
+# Requisitos Funcionais
+
+Os requisitos funcionais definem as funcionalidades que o sistema Help Desk deve oferecer aos seus usuários.
+
+### RF01 — Cadastro de usuários
+
+O sistema deve permitir o cadastro de usuários para acesso à plataforma.
+
+### RF02 — Autenticação
+
+O sistema deve permitir que usuários realizem login e logout de forma segura.
+
+### RF03 — Gerenciamento de chamados
+
+O sistema deve permitir criar, visualizar, editar e acompanhar chamados.
+
+### RF04 — Status dos chamados
+
+O sistema deve permitir alterar o status de um chamado conforme seu andamento.
+
+### RF05 — Prioridade dos chamados
+
+O sistema deve permitir definir diferentes níveis de prioridade para os chamados.
+
+### RF06 — Categorias
+
+O sistema deve permitir categorizar os chamados para facilitar sua organização e gerenciamento.
+
+### RF07 — Histórico
+
+O sistema deve manter o histórico das alterações e ações realizadas nos chamados.
+
+### RF08 — Gerenciamento de clientes
+
+O sistema deve permitir cadastrar e gerenciar clientes relacionados aos chamados.
+
+### RF09 — Busca e filtros
+
+O sistema deve permitir pesquisar e filtrar chamados de acordo com diferentes informações.
+
+### RF10 — Dashboard
+
+O sistema deve disponibilizar um painel para visualizar informações e indicadores relacionados aos chamados.
+
+### RF11 — Controle de acesso
+
+O sistema deve permitir definir diferentes níveis de acesso de acordo com o perfil do usuário.
+
+### RF12 — Gerenciamento de configurações
+
+O sistema deve permitir configurar informações necessárias para o funcionamento do sistema de acordo com o ambiente da empresa.
