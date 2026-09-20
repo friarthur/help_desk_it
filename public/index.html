@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>HelpDesk Pro — Modern support management</title>
+    <!-- Lucide icons via CDN (only icon library, no framework) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font (Inter) for modern readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!-- ========== HEADER & NAVIGATION ========== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <!-- text-based brand logo (original) -->
+            <a href="#" class="brand" aria-label="HelpDesk Pro home">
+                <span class="brand-mark">H</span>
+                <span class="brand-text">HelpDesk<span>Pro</span></span>
+            </a>
+
+            <!-- desktop navigation (hidden on mobile) -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                    <li><a href="#documentation" class="nav-link">Documentation</a></li>
+                    <li><a href="#implementation" class="nav-link">Implementation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- mobile hamburger button (visible on small screens) -->
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="icon-menu"></i>
+                <i data-lucide="x" class="icon-close"></i>
+            </button>
+        </div>
+
+        <!-- mobile slide-in menu -->
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+                <ul class="mobile-nav-list">
+                    <li><a href="#" class="mobile-nav-link active">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link">About</a></li>
+                    <li><a href="#solutions" class="mobile-nav-link">Solutions</a></li>
+                    <li><a href="#documentation" class="mobile-nav-link">Documentation</a></li>
+                    <li><a href="#implementation" class="mobile-nav-link">Implementation</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 id="hero-heading" class="hero-title">Centralize support.<br>Simplify service.</h1>
+                    <p class="hero-description">
+                        HelpDesk Pro brings all your support requests, customer interactions and internal knowledge into one clear workspace. 
+                        No more scattered emails or lost tickets — just organised, efficient support.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn btn-primary">Start free trial</a>
+                        <a href="#about" class="btn btn-secondary">Learn more <i data-lucide="arrow-right" class="btn-icon"></i></a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">faster response</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2.5k+</span>
+                            <span class="stat-label">companies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <div class="card-header">
+                            <i data-lucide="headset" class="visual-icon"></i>
+                            <span>Support dashboard</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="mock-row"><span class="mock-dot green"></span> Ticket #3421 — resolved</div>
+                            <div class="mock-row"><span class="mock-dot yellow"></span> Ticket #3422 — in progress</div>
+                            <div class="mock-row"><span class="mock-dot blue"></span> Ticket #3423 — new request</div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge">Live</span>
+                            <span class="time">Updated just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== MAIN CONTENT: FEATURES / PRIORITY CARDS ========== -->
+        <section class="section priority-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Everything your support team needs</h2>
+                    <p class="section-subtitle">The most important tools to manage requests, knowledge and workflows — all in one place.</p>
+                </div>
+
+                <div class="card-grid priority-grid">
+                    <!-- card 1 - highest priority (accent style) -->
+                    <article class="priority-card primary">
+                        <div class="card-icon">
+                            <i data-lucide="layout-dashboard"></i>
+                        </div>
+                        <h3>Support Management</h3>
+                        <p>Track, assign and resolve every ticket with complete visibility. Reduce chaos and improve team collaboration.</p>
+                    </article>
+                    <!-- card 2 -->
+                    <article class="priority-card">
+                        <div class="card-icon">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <h3>Business Solutions</h3>
+                        <p>Tailored workflows for your company’s unique service structure — from internal help desks to customer care.</p>
+                    </article>
+                    <!-- card 3 -->
+                    <article class="priority-card">
+                        <div class="card-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <h3>Documentation</h3>
+                        <p>Build a searchable knowledge base and keep procedures, guides and answers always at hand.</p>
+                    </article>
+                    <!-- card 4 -->
+                    <article class="priority-card">
+                        <div class="card-icon">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                        <h3>Implementation</h3>
+                        <p>Guided setup that adapts to your existing tools and processes — no heavy IT involvement required.</p>
+                    </article>
+                    <!-- card 5 -->
+                    <article class="priority-card">
+                        <div class="card-icon">
+                            <i data-lucide="grid-3x3"></i>
+                        </div>
+                        <h3>Organization</h3>
+                        <p>Centralize all support information. One source of truth for requests, customers and internal notes.</p>
+                    </article>
+                    <!-- card 6 -->
+                    <article class="priority-card">
+                        <div class="card-icon">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <h3>Process Management</h3>
+                        <p>Define, automate and monitor support processes. Gain clarity on bottlenecks and team performance.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PRESENTATION SECTION ========== -->
+        <section class="section presentation-section">
+            <div class="container presentation-grid">
+                <div class="presentation-content">
+                    <span class="eyebrow">Why HelpDesk Pro</span>
+                    <h2 class="presentation-title">Built for companies that value clarity</h2>
+                    <p class="presentation-text">
+                        Support shouldn’t be a black box. We designed HelpDesk Pro to give managers and teams a unified view of every request, 
+                        conversation and resolution. Whether you handle internal IT or external customer service, you get a structured 
+                        environment that reduces response times and boosts accountability.
+                    </p>
+                    <p class="presentation-text secondary">
+                        No more lost emails or sticky notes. Everything is logged, searchable and ready for analysis.
+                    </p>
+                    <div class="presentation-features">
+                        <div class="feature-item"><i data-lucide="check-circle"></i> Centralized inbox</div>
+                        <div class="feature-item"><i data-lucide="check-circle"></i> Role-based views</div>
+                        <div class="feature-item"><i data-lucide="check-circle"></i> Real-time updates</div>
+                    </div>
+                </div>
+                <div class="presentation-visual">
+                    <div class="panel-visual">
+                        <i data-lucide="users" class="panel-icon"></i>
+                        <div class="panel-text">
+                            <strong>Unified team workspace</strong>
+                            <span>See who’s working on what — at a glance.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SOLUTIONS SECTION ========== -->
+        <section class="section solutions-section" id="solutions">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Business solutions for modern support</h2>
+                    <p class="section-subtitle">How HelpDesk Pro helps organizations run smoother, faster and more transparent operations.</p>
+                </div>
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <i data-lucide="inbox"></i>
+                        <h3>Support requests</h3>
+                        <p>Capture requests from email, chat or portal and manage them in a single queue.</p>
+                    </div>
+                    <div class="solution-card">
+                        <i data-lucide="user-check"></i>
+                        <h3>Customer management</h3>
+                        <p>Access full interaction history and contact details directly from each ticket.</p>
+                    </div>
+                    <div class="solution-card">
+                        <i data-lucide="building-2"></i>
+                        <h3>Internal organization</h3>
+                        <p>Define teams, permissions and workflows that match your company structure.</p>
+                    </div>
+                    <div class="solution-card">
+                        <i data-lucide="activity"></i>
+                        <h3>Service tracking</h3>
+                        <p>Monitor SLA compliance, response times and resolution rates with built-in metrics.</p>
+                    </div>
+                    <div class="solution-card">
+                        <i data-lucide="file-text"></i>
+                        <h3>Documentation</h3>
+                        <p>Link knowledge base articles directly to tickets for faster resolutions.</p>
+                    </div>
+                    <div class="solution-card">
+                        <i data-lucide="eye"></i>
+                        <h3>Operational visibility</h3>
+                        <p>Dashboards and reports give managers real-time insight into support health.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section documentation-section" id="documentation">
+            <div class="container">
+                <div class="doc-grid">
+                    <div class="doc-content">
+                        <span class="eyebrow">Knowledge base</span>
+                        <h2 class="doc-title">Documentation that works for your team</h2>
+                        <p class="doc-text">
+                            Good support starts with good information. Our documentation tools let you create, organize and share 
+                            procedures, FAQs and internal guides — all linked to your support workflow.
+                        </p>
+                        <ul class="doc-list">
+                            <li><i data-lucide="book"></i> Procedures & how-tos</li>
+                            <li><i data-lucide="layers"></i> Knowledge base articles</li>
+                            <li><i data-lucide="file"></i> Internal documentation</li>
+                            <li><i data-lucide="info"></i> Support information</li>
+                            <li><i data-lucide="map"></i> Process guides</li>
+                        </ul>
+                    </div>
+                    <div class="doc-visual">
+                        <div class="doc-card">
+                            <i data-lucide="search" class="doc-icon"></i>
+                            <div class="doc-lines">
+                                <span class="doc-line"></span>
+                                <span class="doc-line short"></span>
+                                <span class="doc-line"></span>
+                                <span class="doc-line medium"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section implementation-section" id="implementation">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Implementation, simplified</h2>
+                    <p class="section-subtitle">From setup to continuous improvement — we make it easy to adopt organized support.</p>
+                </div>
+                <div class="impl-steps">
+                    <div class="impl-step">
+                        <span class="step-number">1</span>
+                        <h3>Organization</h3>
+                        <p>Map your current support structure and identify key touchpoints.</p>
+                    </div>
+                    <div class="impl-step">
+                        <span class="step-number">2</span>
+                        <h3>Configuration</h3>
+                        <p>Set up workflows, teams and permissions to match your needs.</p>
+                    </div>
+                    <div class="impl-step">
+                        <span class="step-number">3</span>
+                        <h3>Adaptation</h3>
+                        <p>Integrate with existing tools and migrate important data.</p>
+                    </div>
+                    <div class="impl-step">
+                        <span class="step-number">4</span>
+                        <h3>Deployment</h3>
+                        <p>Roll out to your team with guided onboarding and training.</p>
+                    </div>
+                    <div class="impl-step">
+                        <span class="step-number">5</span>
+                        <h3>Improvement</h3>
+                        <p>Analyze performance, gather feedback and optimize continuously.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section class="section article-section">
+            <div class="container">
+                <article class="featured-article">
+                    <h2>Why organized support management is critical for modern companies</h2>
+                    <p class="article-meta"><i data-lucide="calendar"></i> Published · 5 min read</p>
+                    <p>
+                        In today’s fast-paced business environment, support is not just a reactive function — it’s a strategic asset. 
+                        Companies that centralize their support operations gain a clear overview of customer pain points, internal 
+                        bottlenecks and team performance. Without a structured system, requests get lost, response times grow and 
+                        customer satisfaction drops.
+                    </p>
+                    <p>
+                        HelpDesk Pro addresses this by providing a single, organized workspace where every interaction is tracked and 
+                        every piece of knowledge is accessible. This not only improves efficiency but also empowers teams to make 
+                        data-driven decisions. Organizations that adopt centralized support management report higher productivity, 
+                        better internal communication and stronger customer relationships.
+                    </p>
+                    <p>
+                        In short: organized support is not a luxury — it’s a necessity for any business that wants to scale without 
+                        sacrificing service quality.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+   
+    <footer class="site-footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="brand footer-brand-logo">
+                    <span class="brand-mark">H</span>
+                    <span class="brand-text">HelpDesk<span>Pro</span></span>
+                </a>
+                <p class="footer-description">
+                    Centralized support management for modern businesses. Organize, track and resolve — all in one place.
+                </p>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub placeholder"><i data-lucide="github"></i></a>
+                    <a href="#" aria-label="Twitter placeholder"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn placeholder"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#implementation">Implementation</a></li>
+                        <li><a href="#">Help center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p class="copyright">© 2026 HelpDesk Pro. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="/assets/js/index.js"></script>
+</body>
+</html>
