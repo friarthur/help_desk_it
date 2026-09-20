@@ -1,0 +1,23 @@
+# Dependências
+/vendor/
+
+# Ambiente
+.env
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Temporários
+*.tmp
+*.temp

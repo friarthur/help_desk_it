@@ -1,0 +1,11 @@
+{
+    "name": "helpdesk/helpdesk",
+    "description": "Help Desk system built with PHP Vanilla",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

@@ -1,0 +1,63 @@
+services:
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+
+    container_name: helpdesk-php
+
+    working_dir: /var/www/html
+
+    volumes:
+      - ./:/var/www/html
+
+    networks:
+      - helpdesk
+
+
+  nginx:
+    image: nginx:alpine
+
+    container_name: helpdesk-nginx
+
+    ports:
+      - "3000:80"
+
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - php
+
+    networks:
+      - helpdesk
+
+
+  mysql:
+    image: mysql:8.4
+
+    container_name: helpdesk-mysql
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: helpdesk
+      MYSQL_USER: helpdesk
+      MYSQL_PASSWORD: helpdesk
+      MYSQL_ROOT_PASSWORD: root
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - helpdesk
+
+
+networks:
+  helpdesk:
+
+
+volumes:
+  mysql_data:
