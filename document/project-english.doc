@@ -1,0 +1,85 @@
+# Help Desk
+
+## Overview
+
+**Help Desk** is a ticket management system designed to help companies organize, track, and resolve support requests.
+
+The project was developed with a focus on simplicity, organization, and customization, allowing each company to adapt the system to its own needs.
+
+## How It Works
+
+The system allows users to create tickets, track their progress, organize requests, and keep support-related information in a single environment.
+
+Its modular structure makes maintenance easier and allows new features to be added as the company grows.
+
+## What Is It For?
+
+Help Desk can be used by companies that need to organize:
+
+* Technical support requests;
+* Internal support;
+* Customer support tickets;
+* Problems and incidents;
+* Task tracking;
+* Support history.
+
+The system can be adapted to different types of companies and teams.
+
+## Installation
+
+The project uses **Docker** to simplify environment setup.
+
+After cloning the repository, configure the required services and run:
+
+```bash
+docker compose up -d
+```
+
+Then, access the system through the address configured in your Docker environment.
+
+For specific requirements and configuration details, check the project's configuration files.
+
+## Environment Configuration
+
+As an **open source** project, Help Desk can be deployed in your own environment, whether on a local computer, server, VPS, or company infrastructure.
+
+Before using the system in production, configure:
+
+* Database;
+* Environment variables;
+* Users and permissions;
+* Domain or server address;
+* Security settings;
+* Data backups.
+
+Avoid using development configurations directly in a production environment.
+
+## How to Adapt It to Your Company
+
+Help Desk was designed to be customizable.
+
+You can modify its structure to meet your company's needs by adding or changing features such as:
+
+* Ticket categories;
+* Statuses and priorities;
+* Users and access levels;
+* Departments;
+* Customers;
+* Reports;
+* Notifications;
+* Integrations with other systems;
+* Company branding.
+
+The idea is to use the project as a foundation and evolve it according to your organization's processes.
+
+## Open Source
+
+Help Desk is an open source project. This allows developers and companies to study the code, make modifications, and create new features according to their needs.
+
+You can use the project as a foundation for your own environment, as long as you comply with the terms of the project's license.
+
+## Contributing
+
+Contributions are welcome.
+
+You can contribute through bug fixes, improvements, new features, documentation, or suggestions for the project's development.

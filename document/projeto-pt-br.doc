@@ -1,0 +1,85 @@
+# Help Desk
+
+## Apresentação
+
+O **Help Desk** é um sistema de gerenciamento de chamados desenvolvido para auxiliar empresas na organização, acompanhamento e resolução de solicitações de suporte.
+
+O projeto foi desenvolvido com foco em simplicidade, organização e possibilidade de personalização, permitindo que cada empresa adapte o sistema às suas próprias necessidades.
+
+## Como funciona
+
+O sistema permite registrar chamados, acompanhar seu andamento, organizar solicitações e manter informações relacionadas aos atendimentos em um único ambiente.
+
+A estrutura foi desenvolvida de forma modular, facilitando a manutenção e a criação de novas funcionalidades conforme o crescimento da empresa.
+
+## Para que serve
+
+O Help Desk pode ser utilizado por empresas que precisam organizar:
+
+* Solicitações de suporte técnico;
+* Atendimento interno;
+* Chamados de clientes;
+* Problemas e incidentes;
+* Acompanhamento de tarefas;
+* Histórico de atendimentos.
+
+O sistema pode ser adaptado para diferentes tipos de empresas e equipes.
+
+## Instalação
+
+O projeto utiliza **Docker** para facilitar a configuração do ambiente.
+
+Após clonar o repositório, configure os serviços necessários e execute:
+
+```bash
+docker compose up -d
+```
+
+Depois, acesse o sistema pelo endereço configurado no ambiente Docker.
+
+Para informações específicas sobre requisitos e configuração, consulte os arquivos de configuração do projeto.
+
+## Configuração do ambiente
+
+Por ser um projeto **open source**, você pode executar o Help Desk em seu próprio ambiente, seja em um computador local, servidor, VPS ou infraestrutura empresarial.
+
+Antes de utilizar o sistema em produção, configure:
+
+* Banco de dados;
+* Variáveis de ambiente;
+* Usuários e permissões;
+* Domínio ou endereço do servidor;
+* Configurações de segurança;
+* Backup dos dados.
+
+Evite utilizar configurações de desenvolvimento diretamente em produção.
+
+## Como adaptar para sua empresa
+
+O Help Desk foi desenvolvido para ser personalizado.
+
+Você pode modificar sua estrutura para atender às necessidades da sua empresa, adicionando ou alterando funcionalidades como:
+
+* Categorias de chamados;
+* Status e prioridades;
+* Usuários e níveis de acesso;
+* Departamentos;
+* Clientes;
+* Relatórios;
+* Notificações;
+* Integrações com outros sistemas;
+* Identidade visual da empresa.
+
+A ideia é utilizar o projeto como uma base e evoluí-lo de acordo com os processos da sua organização.
+
+## Open Source
+
+O Help Desk é um projeto de código aberto. Isso permite que desenvolvedores e empresas estudem o código, façam modificações e criem novas funcionalidades de acordo com suas necessidades.
+
+Você pode utilizar o projeto como base para seu próprio ambiente, desde que respeite os termos da licença utilizada pelo projeto.
+
+## Contribuição
+
+Contribuições são bem-vindas.
+
+Você pode contribuir através de correções, melhorias, novas funcionalidades, documentação ou sugestões para evolução do projeto.

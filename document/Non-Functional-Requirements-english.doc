@@ -1,0 +1,47 @@
+# Non-Functional Requirements
+
+Non-functional requirements define characteristics related to the system's quality, security, performance, and maintainability.
+
+### NFR01 — Security
+
+The system must protect sensitive information and use appropriate authentication and access control mechanisms.
+
+### NFR02 — Performance
+
+The system should provide adequate response times during operations performed by users.
+
+### NFR03 — Availability
+
+The system should remain available according to the infrastructure and environment in which it is deployed.
+
+### NFR04 — Scalability
+
+The architecture should allow the system to evolve and support new features without requiring major changes to its existing structure.
+
+### NFR05 — Maintainability
+
+The code should be organized and structured to facilitate maintenance and future development.
+
+### NFR06 — Portability
+
+The system should be able to run in different environments compatible with its technologies and dependencies.
+
+### NFR07 — Containerization
+
+The system should use Docker to simplify the setup, installation, and reproduction of development and production environments.
+
+### NFR08 — Database
+
+The system should use a relational database compatible with the application and support data storage, querying, and management operations.
+
+### NFR09 — Responsiveness
+
+The interface should adapt to different screen sizes and devices.
+
+### NFR10 — Documentation
+
+The project should provide sufficient documentation to allow users and developers to install, configure, use, and customize the system.
+
+### NFR11 — Open Source
+
+The project should allow its source code to be studied, modified, and distributed according to the terms defined by the project's license.

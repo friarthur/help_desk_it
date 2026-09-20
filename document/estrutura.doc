@@ -1,0 +1,125 @@
+# Ambiente Docker
+
+O projeto Help Desk utiliza Docker para fornecer um ambiente de desenvolvimento isolado e reproduzível.
+
+A aplicação é dividida em três serviços principais:
+
+```text
+Docker Compose
+├── helpdesk-nginx
+├── helpdesk-php
+└── helpdesk-mysql
+```
+
+## Serviços
+
+### Nginx
+
+O container `helpdesk-nginx` funciona como servidor web e recebe as requisições HTTP realizadas pelo navegador.
+
+As requisições que precisam ser processadas pelo PHP são encaminhadas para o container PHP.
+
+### PHP
+
+O container `helpdesk-php` executa a aplicação PHP utilizando PHP-FPM.
+
+O código da aplicação é executado dentro desse container.
+
+### MySQL
+
+O container `helpdesk-mysql` fornece o banco de dados MySQL utilizado pela aplicação Help Desk.
+
+## Estrutura do Projeto
+
+```text
+Help_desk/
+├── app/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Services/
+│   └── Views/
+├── config/
+├── database/
+├── docker/
+│   ├── nginx/
+│   │   └── default.conf
+│   └── php/
+│       └── Dockerfile
+├── document/
+├── public/
+│   └── assets/
+├── routes/
+├── storage/
+├── tests/
+├── vendor/
+├── compose.yaml
+├── Dockerfile
+├── composer.json
+├── composer.lock
+├── index.php
+└── README.md
+```
+
+## Iniciando o Ambiente
+
+Dentro do diretório raiz do projeto, execute:
+
+```bash
+docker compose up -d
+```
+
+Esse comando inicia os containers necessários em segundo plano.
+
+Para verificar os containers em execução:
+
+```bash
+docker ps
+```
+
+Os seguintes containers devem estar em execução:
+
+```text
+helpdesk-nginx
+helpdesk-php
+helpdesk-mysql
+```
+
+## Parando o Ambiente
+
+Para parar os containers do projeto, execute:
+
+```bash
+docker compose down
+```
+
+Esse comando para e remove os containers criados pelo Docker Compose.
+
+## Fluxo da Aplicação
+
+O fluxo das requisições funciona da seguinte forma:
+
+```text
+Navegador
+   ↓
+Nginx
+   ↓
+PHP-FPM
+   ↓
+Aplicação Help Desk
+   ↓
+MySQL
+```
+
+O Nginx recebe as requisições HTTP e encaminha as requisições PHP para o PHP-FPM. A aplicação PHP processa a requisição e se comunica com o MySQL quando é necessário acessar o banco de dados.
+
+## Ambiente de Desenvolvimento
+
+O Docker permite reproduzir o mesmo ambiente em diferentes máquinas, reduzindo a necessidade de instalar e configurar manualmente PHP, Nginx e MySQL.
+
+Isso é especialmente útil para equipes de desenvolvimento e para empresas que desejam executar o Help Desk em sua própria infraestrutura.
+
+## Produção
+
+Antes de utilizar o sistema em produção, revise as configurações do Docker, variáveis de ambiente, credenciais do banco de dados, configuração de rede, configurações de segurança e armazenamento persistente.
+
+Configurações utilizadas durante o desenvolvimento não devem ser utilizadas diretamente em produção sem uma revisão adequada.

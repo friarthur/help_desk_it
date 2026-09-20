@@ -1,0 +1,51 @@
+# Functional Requirements
+
+Functional requirements define the features and actions that the Help Desk system must provide to its users.
+
+### FR01 — User Registration
+
+The system must allow users to register and create accounts to access the platform.
+
+### FR02 — Authentication
+
+The system must allow users to securely log in and log out.
+
+### FR03 — Ticket Management
+
+The system must allow users to create, view, edit, and track support tickets.
+
+### FR04 — Ticket Status
+
+The system must allow users to change the status of a ticket according to its progress.
+
+### FR05 — Ticket Priority
+
+The system must allow different priority levels to be assigned to tickets.
+
+### FR06 — Categories
+
+The system must allow tickets to be categorized to improve organization and management.
+
+### FR07 — History
+
+The system must maintain a history of changes and actions performed on tickets.
+
+### FR08 — Customer Management
+
+The system must allow users to register and manage customers associated with tickets.
+
+### FR09 — Search and Filters
+
+The system must allow users to search and filter tickets based on different criteria.
+
+### FR10 — Dashboard
+
+The system must provide a dashboard displaying information and indicators related to tickets.
+
+### FR11 — Access Control
+
+The system must allow different access levels to be defined according to user roles.
+
+### FR12 — System Settings
+
+The system must allow the configuration of information required for the system to operate according to the company's environment.

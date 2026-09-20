@@ -1,0 +1,125 @@
+# Docker Environment
+
+The Help Desk project uses Docker to provide an isolated and reproducible development environment.
+
+The application is divided into three main services:
+
+```text
+Docker Compose
+├── helpdesk-nginx
+├── helpdesk-php
+└── helpdesk-mysql
+```
+
+## Services
+
+### Nginx
+
+The `helpdesk-nginx` container works as the web server and receives HTTP requests from the browser.
+
+It forwards PHP requests to the PHP container.
+
+### PHP
+
+The `helpdesk-php` container runs the PHP application using PHP-FPM.
+
+The application code is executed inside this container.
+
+### MySQL
+
+The `helpdesk-mysql` container provides the MySQL database used by the Help Desk application.
+
+## Project Structure
+
+```text
+Help_desk/
+├── app/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Services/
+│   └── Views/
+├── config/
+├── database/
+├── docker/
+│   ├── nginx/
+│   │   └── default.conf
+│   └── php/
+│       └── Dockerfile
+├── document/
+├── public/
+│   └── assets/
+├── routes/
+├── storage/
+├── tests/
+├── vendor/
+├── compose.yaml
+├── Dockerfile
+├── composer.json
+├── composer.lock
+├── index.php
+└── README.md
+```
+
+## Starting the Environment
+
+From the project root directory, run:
+
+```bash
+docker compose up -d
+```
+
+This command starts the required containers in the background.
+
+To check the running containers:
+
+```bash
+docker ps
+```
+
+The following containers should be running:
+
+```text
+helpdesk-nginx
+helpdesk-php
+helpdesk-mysql
+```
+
+## Stopping the Environment
+
+To stop the project's containers, run:
+
+```bash
+docker compose down
+```
+
+This stops and removes the containers created by Docker Compose.
+
+## Application Flow
+
+The request flow is organized as follows:
+
+```text
+Browser
+   ↓
+Nginx
+   ↓
+PHP-FPM
+   ↓
+Help Desk Application
+   ↓
+MySQL
+```
+
+Nginx handles incoming HTTP requests and forwards PHP requests to PHP-FPM. The PHP application processes the request and communicates with MySQL when database access is required.
+
+## Development Environment
+
+Docker allows the same environment to be reproduced across different machines, reducing the need to manually install and configure PHP, Nginx, and MySQL.
+
+This is especially useful for development teams and for companies that want to deploy the Help Desk in their own infrastructure.
+
+## Production
+
+Before deploying the system to production, review the Docker configuration, environment variables, database credentials, network configuration, security settings, and persistent storage.
+
+Development configurations should not be used directly in a production environment without proper review.

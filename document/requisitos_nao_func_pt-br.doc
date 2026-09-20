@@ -1,0 +1,47 @@
+# Requisitos Não Funcionais
+
+Os requisitos não funcionais definem características relacionadas à qualidade, segurança, desempenho e manutenção do sistema.
+
+### RNF01 — Segurança
+
+O sistema deve proteger informações sensíveis e utilizar mecanismos adequados de autenticação e controle de acesso.
+
+### RNF02 — Desempenho
+
+O sistema deve apresentar tempo de resposta adequado durante as operações realizadas pelos usuários.
+
+### RNF03 — Disponibilidade
+
+O sistema deve permanecer disponível de acordo com a infraestrutura e o ambiente em que estiver hospedado.
+
+### RNF04 — Escalabilidade
+
+A arquitetura deve permitir a evolução do sistema e a inclusão de novas funcionalidades sem exigir grandes alterações na estrutura existente.
+
+### RNF05 — Manutenibilidade
+
+O código deve ser organizado e estruturado de forma que facilite sua manutenção e evolução.
+
+### RNF06 — Portabilidade
+
+O sistema deve poder ser executado em diferentes ambientes compatíveis com suas tecnologias e dependências.
+
+### RNF07 — Containerização
+
+O sistema deve utilizar Docker para facilitar a configuração, instalação e reprodução do ambiente de desenvolvimento e produção.
+
+### RNF08 — Banco de dados
+
+O sistema deve utilizar um banco de dados relacional compatível com a aplicação e permitir operações de armazenamento, consulta e gerenciamento dos dados.
+
+### RNF09 — Responsividade
+
+A interface deve ser adaptável a diferentes tamanhos de tela e dispositivos.
+
+### RNF10 — Documentação
+
+O projeto deve possuir documentação suficiente para permitir sua instalação, configuração, utilização e personalização.
+
+### RNF11 — Código aberto
+
+O projeto deve permitir que seu código seja estudado, modificado e distribuído de acordo com os termos definidos pela licença do projeto.
