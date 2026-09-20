@@ -11,30 +11,25 @@ if ($url == '') {
     $url = $_SERVER['REQUEST_URI'] ?? '/';
 }
 
-// remove "/" do início e fim
+
 $url = trim($url, '/');
 
 
 $url = explode('?', $url)[0];
 
-// quebra a URL em partes
 $url = explode('/', $url);
 
-// pega só a rota principal
+
 $rota = strtolower(implode('/', $url));
 
-// ===============================
-// VERIFICAR ROTA
-// ===============================
+
 if (array_key_exists($rota, $routes)) {
 
     require __DIR__ . '/' . $routes[$rota];
     exit; // MUITO IMPORTANTE
 }
 
-// ===============================
-// 404
-// ===============================
+
 http_response_code(404);
 ?>
 <!DOCTYPE html>

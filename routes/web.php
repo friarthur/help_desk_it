@@ -2,6 +2,6 @@
 
 $routes =[ 
 '' => 'index.php',
-'home' => 'public/index.php',
+'home' => 'public/index.html',
 
 ];
