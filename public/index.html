@@ -1,391 +1,683 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>GltiDesk — Gestão moderna de suporte</title>
-    <!-- Ícones Lucide via CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Fonte Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Folha de estilos principal -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GLTIdesk — Open Source Help Desk & IT Management. Centralize atendimentos, organize sua operação e acompanhe seus dispositivos.">
+<title>GLTIdesk — Help Desk & IT Management</title>
+
+<link rel="icon" href="/public/assets/img/nova_guia_logo.png" type="image/svg+xml">
+<link rel="stylesheet" href="/public/assets/css/style.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
-    <!-- ========== CABEÇALHO E NAVEGAÇÃO ========== -->
-    <header class="site-header">
-        <div class="container header-container">
-            <!-- Logo da marca -->
-            <a href="#" class="brand" aria-label="Página inicial do GltiDesk">
-                <span class="brand-mark">G</span>
-                <span class="brand-text">Glti<span>Desk</span></span>
-            </a>
 
-            <!-- Navegação desktop -->
-            <nav class="desktop-nav" aria-label="Navegação principal">
-                <ul class="nav-list">
-                    <li><a href="#" class="nav-link active">Início</a></li>
-                    <li><a href="#about" class="nav-link">Sobre</a></li>
-                    <li><a href="#solutions" class="nav-link">Soluções</a></li>
-                    <li><a href="#documentation" class="nav-link">Documentação</a></li>
-                    <li><a href="#implementation" class="nav-link">Implementação</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#inicio" class="nav-logo" aria-label="GLTIdesk — início">
+      <img src="/public/assets/img/logo_navbar.png" alt="GLTIdesk" class="nav-logo-img">
+    </a>
 
-            <!-- Botão do menu mobile -->
-            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-                <i data-lucide="menu" class="icon-menu"></i>
-                <i data-lucide="x" class="icon-close"></i>
-            </button>
+    <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#plataforma">Plataforma</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#planos">Planos</a>
+      <a href="#parceiros">Parceiros</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="#planos" class="btn btn-primary nav-cta-mobile">Começar agora</a>
+    </nav>
+
+    <a href="#planos" class="btn btn-primary nav-cta">Começar agora</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <span class="badge">
+        <i data-lucide="git-branch"></i>
+        Open Source • Help Desk • IT Management
+      </span>
+
+      <h1>Suporte de TI <span class="highlight">além dos chamados.</span></h1>
+
+      <p class="hero-sub">
+        Centralize atendimentos, organize sua operação e acompanhe seus dispositivos
+        em uma plataforma criada para transformar suporte técnico em uma operação
+        organizada e preventiva.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#planos" class="btn btn-primary btn-lg">
+          Começar agora <i data-lucide="arrow-right"></i>
+        </a>
+        <a href="#plataforma" class="btn btn-outline btn-lg">Conhecer a plataforma</a>
+      </div>
+
+      <ul class="hero-indicators">
+        <li><i data-lucide="git-branch"></i> Open Source</li>
+        <li><i data-lucide="globe"></i> Plataforma Web</li>
+        <li><i data-lucide="activity"></i> Monitoramento</li>
+        <li><i data-lucide="headset"></i> Suporte centralizado</li>
+      </ul>
+    </div>
+
+    <div class="hero-mockup">
+      <div class="mockup-frame">
+        <div class="mockup-bar" aria-hidden="true">
+          <span></span><span></span><span></span>
         </div>
-
-        <!-- Menu mobile -->
-        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-            <nav class="mobile-nav" aria-label="Navegação mobile">
-                <ul class="mobile-nav-list">
-                    <li><a href="#" class="mobile-nav-link active">Início</a></li>
-                    <li><a href="#about" class="mobile-nav-link">Sobre</a></li>
-                    <li><a href="#solutions" class="mobile-nav-link">Soluções</a></li>
-                    <li><a href="#documentation" class="mobile-nav-link">Documentação</a></li>
-                    <li><a href="#implementation" class="mobile-nav-link">Implementação</a></li>
-                    <li><a href="#contact" class="mobile-nav-link">Contato</a></li>
-                </ul>
-            </nav>
+        <div class="mockup-body">
+          <img
+            src="/public/assets/img/dash1.png"
+            alt="Dashboard da plataforma GLTIdesk com visão geral de chamados e equipamentos"
+            class="mockup-img"
+          >
         </div>
-    </header>
+      </div>
+      <p class="mockup-caption">Visão geral do GLTIdesk Web</p>
+    </div>
 
-    <main>
-        <!-- ========== SEÇÃO PRINCIPAL ========== -->
-        <section class="hero" aria-labelledby="hero-heading">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <h1 id="hero-heading" class="hero-title">Centralize o suporte.<br>Simplifique o atendimento.</h1>
-                    <p class="hero-description">
-                        O GltiDesk reúne chamados, interações com clientes e conhecimento interno em um único ambiente organizado. 
-                        Chega de e-mails espalhados ou chamados perdidos — tenha um suporte centralizado, eficiente e fácil de acompanhar.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#" class="btn btn-primary">Começar agora</a>
-                        <a href="#about" class="btn btn-secondary">Saiba mais <i data-lucide="arrow-right" class="btn-icon"></i></a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">mais agilidade nas respostas</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">2.5k+</span>
-                            <span class="stat-label">empresas</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="visual-card">
-                        <div class="card-header">
-                            <i data-lucide="headset" class="visual-icon"></i>
-                            <span>Painel de suporte</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="mock-row"><span class="mock-dot green"></span> Chamado #3421 — resolvido</div>
-                            <div class="mock-row"><span class="mock-dot yellow"></span> Chamado #3422 — em andamento</div>
-                            <div class="mock-row"><span class="mock-dot blue"></span> Chamado #3423 — nova solicitação</div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge">Ao vivo</span>
-                            <span class="time">Atualizado agora</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  </div>
+</section>
 
-        <!-- ========== RECURSOS PRINCIPAIS ========== -->
-        <section class="section priority-section" id="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Tudo o que sua equipe de suporte precisa</h2>
-                    <p class="section-subtitle">As principais ferramentas para gerenciar chamados, conhecimento e fluxos de trabalho — tudo em um só lugar.</p>
-                </div>
+<!-- ================= INTRODUÇÃO / PROBLEMA ================= -->
+<section class="section section-problema" id="problema">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="alert-triangle"></i> O problema</span>
+      <h2>Suporte técnico não deveria depender de informações espalhadas.</h2>
+      <p>Chamados em canais diferentes, histórico perdido e equipamentos sem acompanhamento transformam cada atendimento em um recomeço.</p>
+    </div>
 
-                <div class="card-grid priority-grid">
-                    <!-- Card 1 -->
-                    <article class="priority-card primary">
-                        <div class="card-icon">
-                            <i data-lucide="layout-dashboard"></i>
-                        </div>
-                        <h3>Gestão de Suporte</h3>
-                        <p>Acompanhe, atribua e resolva cada chamado com total visibilidade. Reduza a desorganização e melhore a colaboração da equipe.</p>
-                    </article>
-                    <!-- Card 2 -->
-                    <article class="priority-card">
-                        <div class="card-icon">
-                            <i data-lucide="briefcase"></i>
-                        </div>
-                        <h3>Soluções Empresariais</h3>
-                        <p>Fluxos de trabalho adaptados à estrutura de atendimento da sua empresa — do suporte interno ao atendimento ao cliente.</p>
-                    </article>
-                    <!-- Card 3 -->
-                    <article class="priority-card">
-                        <div class="card-icon">
-                            <i data-lucide="book-open"></i>
-                        </div>
-                        <h3>Documentação</h3>
-                        <p>Crie uma base de conhecimento pesquisável e mantenha procedimentos, guias e respostas sempre disponíveis.</p>
-                    </article>
-                    <!-- Card 4 -->
-                    <article class="priority-card">
-                        <div class="card-icon">
-                            <i data-lucide="rocket"></i>
-                        </div>
-                        <h3>Implementação</h3>
-                        <p>Configuração orientada e adaptável às ferramentas e aos processos já utilizados pela sua empresa.</p>
-                    </article>
-                    <!-- Card 5 -->
-                    <article class="priority-card">
-                        <div class="card-icon">
-                            <i data-lucide="grid-3x3"></i>
-                        </div>
-                        <h3>Organização</h3>
-                        <p>Centralize todas as informações de suporte em um único local: chamados, clientes e registros internos.</p>
-                    </article>
-                    <!-- Card 6 -->
-                    <article class="priority-card">
-                        <div class="card-icon">
-                            <i data-lucide="git-branch"></i>
-                        </div>
-                        <h3>Gestão de Processos</h3>
-                        <p>Defina, automatize e acompanhe processos de suporte. Identifique gargalos e acompanhe o desempenho da equipe.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <div class="flow-visual">
+      <article class="flow-step flow-problema">
+        <div class="flow-icon"><i data-lucide="file-warning"></i></div>
+        <h3>PROBLEMA</h3>
+        <p>Chamados em diferentes canais, histórico perdido, equipamentos sem inventário, falta de contexto técnico, manutenção apenas após a falha.</p>
+      </article>
 
-        <!-- ========== APRESENTAÇÃO ========== -->
-        <section class="section presentation-section">
-            <div class="container presentation-grid">
-                <div class="presentation-content">
-                    <span class="eyebrow">Por que GltiDesk</span>
-                    <h2 class="presentation-title">Criado para empresas que valorizam organização</h2>
-                    <p class="presentation-text">
-                        O suporte não precisa ser complicado. O GltiDesk foi criado para oferecer a gestores e equipes uma visão unificada de cada chamado, 
-                        interação e resolução. Seja no suporte interno de TI ou no atendimento a clientes, você conta com um ambiente estruturado 
-                        para organizar demandas, reduzir o tempo de resposta e melhorar o acompanhamento.
-                    </p>
-                    <p class="presentation-text secondary">
-                        Chega de e-mails perdidos e anotações espalhadas. Tudo fica registrado, pesquisável e disponível para análise.
-                    </p>
-                    <div class="presentation-features">
-                        <div class="feature-item"><i data-lucide="check-circle"></i> Central de chamados</div>
-                        <div class="feature-item"><i data-lucide="check-circle"></i> Visualizações por perfil</div>
-                        <div class="feature-item"><i data-lucide="check-circle"></i> Atualizações em tempo real</div>
-                    </div>
-                </div>
-                <div class="presentation-visual">
-                    <div class="panel-visual">
-                        <i data-lucide="users" class="panel-icon"></i>
-                        <div class="panel-text">
-                            <strong>Ambiente unificado para a equipe</strong>
-                            <span>Veja rapidamente quem está trabalhando em cada demanda.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="flow-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
 
-        <!-- ========== SOLUÇÕES ========== -->
-        <section class="section solutions-section" id="solutions">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Soluções empresariais para um suporte moderno</h2>
-                    <p class="section-subtitle">Como o GltiDesk ajuda empresas a organizar operações de suporte com mais agilidade e transparência.</p>
-                </div>
-                <div class="solutions-grid">
-                    <div class="solution-card">
-                        <i data-lucide="inbox"></i>
-                        <h3>Chamados de suporte</h3>
-                        <p>Centralize solicitações e gerencie todos os chamados em uma única fila de atendimento.</p>
-                    </div>
-                    <div class="solution-card">
-                        <i data-lucide="user-check"></i>
-                        <h3>Gestão de clientes</h3>
-                        <p>Acesse o histórico de interações e os dados do cliente diretamente em cada chamado.</p>
-                    </div>
-                    <div class="solution-card">
-                        <i data-lucide="building-2"></i>
-                        <h3>Organização interna</h3>
-                        <p>Defina equipes, permissões e fluxos de trabalho de acordo com a estrutura da sua empresa.</p>
-                    </div>
-                    <div class="solution-card">
-                        <i data-lucide="activity"></i>
-                        <h3>Acompanhamento de atendimento</h3>
-                        <p>Acompanhe prazos, tempos de resposta e índices de resolução por meio de métricas de atendimento.</p>
-                    </div>
-                    <div class="solution-card">
-                        <i data-lucide="file-text"></i>
-                        <h3>Documentação</h3>
-                        <p>Relacione conteúdos da base de conhecimento aos chamados para agilizar as resoluções.</p>
-                    </div>
-                    <div class="solution-card">
-                        <i data-lucide="eye"></i>
-                        <h3>Visibilidade operacional</h3>
-                        <p>Painéis e relatórios oferecem aos gestores uma visão atualizada da operação de suporte.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <article class="flow-step flow-glti">
+        <div class="flow-icon"><i data-lucide="monitor-check"></i></div>
+        <h3>GLTIdesk</h3>
+        <p>Plataforma que centraliza atendimentos, mantém histórico técnico e conecta a operação aos dispositivos.</p>
+      </article>
 
-        <section class="section documentation-section" id="documentation">
-            <div class="container">
-                <div class="doc-grid">
-                    <div class="doc-content">
-                        <span class="eyebrow">Base de conhecimento</span>
-                        <h2 class="doc-title">Documentação que funciona para sua equipe</h2>
-                        <p class="doc-text">
-                            Um bom suporte começa com informação organizada. As ferramentas de documentação permitem criar, organizar e compartilhar 
-                            procedimentos, perguntas frequentes e guias internos integrados ao fluxo de suporte.
-                        </p>
-                        <ul class="doc-list">
-                            <li><i data-lucide="book"></i> Procedimentos e tutoriais</li>
-                            <li><i data-lucide="layers"></i> Artigos da base de conhecimento</li>
-                            <li><i data-lucide="file"></i> Documentação interna</li>
-                            <li><i data-lucide="info"></i> Informações de suporte</li>
-                            <li><i data-lucide="map"></i> Guias de processos</li>
-                        </ul>
-                    </div>
-                    <div class="doc-visual">
-                        <div class="doc-card">
-                            <i data-lucide="search" class="doc-icon"></i>
-                            <div class="doc-lines">
-                                <span class="doc-line"></span>
-                                <span class="doc-line short"></span>
-                                <span class="doc-line"></span>
-                                <span class="doc-line medium"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="flow-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
 
-        <section class="section implementation-section" id="implementation">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Implementação simplificada</h2>
-                    <p class="section-subtitle">Da configuração à melhoria contínua — facilitamos a adoção de um suporte organizado.</p>
-                </div>
-                <div class="impl-steps">
-                    <div class="impl-step">
-                        <span class="step-number">1</span>
-                        <h3>Organização</h3>
-                        <p>Mapeie a estrutura atual de suporte e identifique os principais pontos de atendimento.</p>
-                    </div>
-                    <div class="impl-step">
-                        <span class="step-number">2</span>
-                        <h3>Configuração</h3>
-                        <p>Configure fluxos, equipes e permissões de acordo com as suas necessidades.</p>
-                    </div>
-                    <div class="impl-step">
-                        <span class="step-number">3</span>
-                        <h3>Adaptação</h3>
-                        <p>Integre as ferramentas existentes e organize a migração dos dados importantes.</p>
-                    </div>
-                    <div class="impl-step">
-                        <span class="step-number">4</span>
-                        <h3>Implantação</h3>
-                        <p>Disponibilize o sistema para a equipe com orientação e treinamento.</p>
-                    </div>
-                    <div class="impl-step">
-                        <span class="step-number">5</span>
-                        <h3>Melhoria contínua</h3>
-                        <p>Analise o desempenho, reúna feedbacks e melhore os processos continuamente.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <article class="flow-step flow-solucao">
+        <div class="flow-icon"><i data-lucide="check-circle-2"></i></div>
+        <h3>SOLUÇÃO</h3>
+        <p>Atendimentos organizados, contexto técnico disponível e operação preventiva sobre a infraestrutura.</p>
+      </article>
+    </div>
 
-       
-        <section class="section article-section">
-            <div class="container">
-                <article class="featured-article">
-                    <h2>Por que uma gestão de suporte organizada é essencial para empresas modernas</h2>
-                    <p class="article-meta"><i data-lucide="calendar"></i> Publicado · 5 min de leitura</p>
-                    <p>
-                        No ambiente empresarial atual, o suporte não é apenas uma função reativa — ele também faz parte da organização estratégica da empresa. 
-                        Empresas que centralizam suas operações de suporte conseguem visualizar melhor as necessidades dos clientes, os gargalos internos 
-                        e o desempenho da equipe. Sem um sistema estruturado, solicitações podem se perder, os tempos de resposta aumentam e 
-                        a qualidade do atendimento é prejudicada.
-                    </p>
-                    <p>
-                        O GltiDesk busca resolver esse problema oferecendo um ambiente único e organizado, no qual cada interação pode ser acompanhada e 
-                        as informações importantes ficam acessíveis à equipe. Isso melhora a organização operacional e facilita decisões 
-                        baseadas nos dados registrados no próprio atendimento.
-                    </p>
-                    <p>
-                        Em resumo: um suporte organizado ajuda empresas a crescer mantendo controle sobre os chamados, os processos e a qualidade do atendimento.
-                    </p>
-                </article>
-            </div>
-        </section>
-    </main>
+    <div class="cards-grid cards-problema">
+      <article class="card">
+        <i data-lucide="files"></i>
+        <h4>Chamados em diferentes canais</h4>
+        <p>E-mails, mensagens e planilhas fazem o mesmo atendimento ser registrado de formas diferentes — ou nem registrado.</p>
+      </article>
+      <article class="card">
+        <i data-lucide="history"></i>
+        <h4>Histórico perdido</h4>
+        <p>Sem registro consistente, cada atendimento começa do zero mesmo em equipamentos recorrentes.</p>
+      </article>
+      <article class="card">
+        <i data-lucide="hard-drive"></i>
+        <h4>Equipamentos sem inventário</h4>
+        <p>Máquinas sem identificação, configuração ou rastreio dificultam qualquer gestão de parque.</p>
+      </article>
+      <article class="card">
+        <i data-lucide="wrench"></i>
+        <h4>Manutenção reativa</h4>
+        <p>Intervenções apenas quando algo quebra resultam em paradas maiores e custos evitáveis.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-   
-    <footer class="site-footer" id="contact">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="brand footer-brand-logo">
-                    <span class="brand-mark">G</span>
-                    <span class="brand-text">Glti<span>Desk</span></span>
-                </a>
-                <p class="footer-description">
-                    Gestão centralizada de suporte para empresas modernas. Organize, acompanhe e resolva chamados em um só lugar.
-                </p>
-                <div class="footer-social">
-                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
-                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                </div>
-            </div>
+<!-- ================= SOBRE A PLATAFORMA ================= -->
+<section class="section section-plataforma" id="plataforma">
+  <div class="container plataforma-grid">
 
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Produto</h4>
-                    <ul>
-                        <li><a href="#">Início</a></li>
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#solutions">Soluções</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Recursos</h4>
-                    <ul>
-                        <li><a href="#documentation">Documentação</a></li>
-                        <li><a href="#implementation">Implementação</a></li>
-                        <li><a href="#">Central de ajuda</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Carreiras</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
+    <div class="plataforma-text">
+      <span class="section-tag light"><i data-lucide="layout-dashboard"></i> A plataforma</span>
+      <h2>Uma plataforma criada para organizar toda a operação de suporte.</h2>
+      <p class="lead">
+        O GLTIdesk centraliza chamados, clientes, técnicos e equipamentos em um único ambiente.
+        A operação passa a ter contexto, histórico e visão do que está acontecendo — em vez de
+        depender de informações dispersas.
+      </p>
+
+      <ul class="feature-grid">
+        <li class="feature-item"><i data-lucide="ticket"></i> Chamados</li>
+        <li class="feature-item"><i data-lucide="users"></i> Clientes</li>
+        <li class="feature-item"><i data-lucide="user-cog"></i> Técnicos</li>
+        <li class="feature-item"><i data-lucide="headset"></i> Atendimentos</li>
+        <li class="feature-item"><i data-lucide="archive"></i> Histórico</li>
+        <li class="feature-item"><i data-lucide="package"></i> Inventário</li>
+        <li class="feature-item"><i data-lucide="bar-chart-3"></i> Dashboard</li>
+        <li class="feature-item"><i data-lucide="file-text"></i> Relatórios</li>
+      </ul>
+    </div>
+
+    <figure class="plataforma-image">
+      <img
+        src="/public/assets/img/platform/chamados.webp"
+        alt="Tela de gestão de chamados do GLTIdesk Web"
+        loading="lazy"
+        class="platform-shot"
+      >
+      <figcaption>Gestão de chamados no GLTIdesk Web</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ================= SOBRE O PROJETO ================= -->
+<section class="section section-projeto" id="sobre">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag light"><i data-lucide="git-branch"></i> Visão do projeto</span>
+      <h2>Help Desk, inventário e monitoramento conectados.</h2>
+      <p>O GLTIdesk nasce como plataforma de Help Desk Web, mas foi projetado para conectar a gestão do suporte ao acompanhamento dos dispositivos.</p>
+    </div>
+
+    <div class="evolucao-flow">
+      <div class="evolucao-step"><i data-lucide="ticket"></i><span>Help Desk</span></div>
+      <div class="evolucao-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="evolucao-step"><i data-lucide="package"></i><span>Inventário</span></div>
+      <div class="evolucao-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="evolucao-step"><i data-lucide="radar"></i><span>Monitoramento</span></div>
+      <div class="evolucao-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="evolucao-step"><i data-lucide="stethoscope"></i><span>Diagnóstico</span></div>
+      <div class="evolucao-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="evolucao-step"><i data-lucide="cpu"></i><span>Automação</span></div>
+    </div>
+
+    <figure class="projeto-figure">
+      <img
+        src="/public/assets/img/software/monitoring.webp"
+        alt="Diagrama do projeto GLTIdesk conectando Help Desk, inventário, monitoramento e automação"
+        loading="lazy"
+      >
+      <figcaption>Evolução planejada da plataforma GLTIdesk</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= EXPERIÊNCIA REAL ================= -->
+<section class="section section-solucoes" id="solucoes">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="lightbulb"></i> Experiência real</span>
+      <h2>Desenvolvido a partir de problemas reais do suporte.</h2>
+      <p>Cada funcionalidade nasce de situações concretas do dia a dia de quem trabalha com TI — não de suposições de mercado.</p>
+    </div>
+
+    <div class="cards-grid cards-solucoes">
+      <article class="card card-solucao">
+        <i data-lucide="user-check"></i>
+        <h4>Técnico começa o atendimento sem contexto.</h4>
+        <p>Sem histórico e sem informação do dispositivo, o diagnóstico se torna tentativa e erro.</p>
+      </article>
+      <article class="card card-solucao">
+        <i data-lucide="clipboard-list"></i>
+        <h4>Histórico técnico do equipamento é perdido.</h4>
+        <p>Cada manutenção some após o atendimento e o conhecimento acumulado não retorna.</p>
+      </article>
+      <article class="card card-solucao">
+        <i data-lucide="network"></i>
+        <h4>Informações espalhadas entre ferramentas.</h4>
+        <p>Chamados em um sistema, inventário em outro, anotações em planilhas e e-mails.</p>
+      </article>
+      <article class="card card-solucao">
+        <i data-lucide="wrench"></i>
+        <h4>Manutenção apenas depois da falha.</h4>
+        <p>Sem monitoramento, a operação reage em vez de prevenir — com custo maior a cada incidente.</p>
+      </article>
+    </div>
+
+    <article class="case-area">
+      <figure class="case-image">
+        <img
+          src="/public/assets/img/cases/case-01.webp"
+          alt="Case real de implementação do GLTIdesk"
+          loading="lazy"
+        >
+      </figure>
+      <div class="case-content">
+        <span class="case-tag">Case real</span>
+        <h3>Espaço preparado para resultados reais</h3>
+        <p>
+          Esta área foi planejada para receber cases, métricas e indicadores de clientes
+          e parceiros do GLTIdesk. Nenhum número fictício é exibido enquanto dados reais
+          não estiverem disponíveis.
+        </p>
+        <div class="case-indicators" hidden aria-hidden="true">
+          <div class="indicator"><strong>—</strong><small>Indicador</small></div>
+          <div class="indicator"><strong>—</strong><small>Indicador</small></div>
+          <div class="indicator"><strong>—</strong><small>Indicador</small></div>
         </div>
-        <div class="container footer-bottom">
-            <p class="copyright">© 2026 GltiDesk. Todos os direitos reservados.</p>
-            <div class="footer-legal">
-                <a href="#">Privacidade</a>
-                <a href="#">Termos</a>
-            </div>
-        </div>
-    </footer>
+      </div>
+    </article>
+  </div>
+</section>
 
-    
-    <script src="/assets/js/index.js"></script>
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="section section-como-funciona" id="como-funciona">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag light"><i data-lucide="workflow"></i> Como funciona</span>
+      <h2>Do chamado ao histórico. Do dispositivo ao técnico.</h2>
+    </div>
+
+    <div class="fluxos-grid">
+      <article class="fluxo">
+        <h3><i data-lucide="globe"></i> GLTIdesk Web</h3>
+        <p class="fluxo-desc">Fluxo padrão de atendimento via navegador.</p>
+        <ol class="fluxo-steps">
+          <li><i data-lucide="user"></i> Usuário</li>
+          <li><i data-lucide="ticket"></i> Chamado</li>
+          <li><i data-lucide="monitor-check"></i> GLTIdesk</li>
+          <li><i data-lucide="user-cog"></i> Técnico</li>
+          <li><i data-lucide="headset"></i> Atendimento</li>
+          <li><i data-lucide="archive"></i> Histórico</li>
+        </ol>
+      </article>
+
+      <article class="fluxo">
+        <h3><i data-lucide="laptop"></i> GLTIdesk Software</h3>
+        <p class="fluxo-desc">Fluxo planejado com agent instalado nos dispositivos.</p>
+        <ol class="fluxo-steps">
+          <li><i data-lucide="hard-drive"></i> Computador</li>
+          <li><i data-lucide="cpu"></i> GLTIdesk Agent</li>
+          <li><i data-lucide="radar"></i> Monitoramento</li>
+          <li><i data-lucide="server"></i> Servidor GLTIdesk</li>
+          <li><i data-lucide="user-cog"></i> Técnico</li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLANOS ================= -->
+<section class="section section-planos" id="planos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="layers"></i> Planos</span>
+      <h2>Escolha como utilizar o GLTIdesk.</h2>
+      <p>Duas ofertas complementares da mesma plataforma. Sem níveis artificiais, sem funcionalidades bloqueadas por marketing.</p>
+    </div>
+
+    <div class="planos-grid">
+
+      <article class="plano-card">
+        <header class="plano-header">
+          <i data-lucide="globe" class="plano-icon"></i>
+          <h3>GLTIdesk Web</h3>
+          <p>Gerencie sua operação de suporte diretamente pelo navegador.</p>
+        </header>
+        <ul class="plano-features">
+          <li><i data-lucide="check"></i> Gestão de chamados</li>
+          <li><i data-lucide="check"></i> Clientes</li>
+          <li><i data-lucide="check"></i> Técnicos</li>
+          <li><i data-lucide="check"></i> Atendimentos</li>
+          <li><i data-lucide="check"></i> Histórico</li>
+          <li><i data-lucide="check"></i> Dashboard</li>
+          <li><i data-lucide="check"></i> Inventário</li>
+          <li><i data-lucide="check"></i> Relatórios</li>
+          <li><i data-lucide="check"></i> Base de conhecimento</li>
+        </ul>
+        <a href="#contato" class="btn btn-outline-dark btn-full">
+          Começar com Web <i data-lucide="arrow-right"></i>
+        </a>
+      </article>
+
+      <article class="plano-card plano-card-destaque">
+        <span class="plano-badge">Em desenvolvimento</span>
+        <header class="plano-header">
+          <i data-lucide="laptop" class="plano-icon"></i>
+          <h3>GLTIdesk Software</h3>
+          <p>Conecte o GLTIdesk aos dispositivos da sua infraestrutura.</p>
+        </header>
+        <ul class="plano-features">
+          <li><i data-lucide="check"></i> Recursos do GLTIdesk Web</li>
+          <li><i data-lucide="check"></i> GLTIdesk Agent</li>
+          <li><i data-lucide="check"></i> Inventário automático</li>
+          <li><i data-lucide="check"></i> Monitoramento</li>
+          <li><i data-lucide="check"></i> Diagnóstico</li>
+          <li><i data-lucide="check"></i> Alertas</li>
+          <li><i data-lucide="check"></i> Histórico do equipamento</li>
+          <li><i data-lucide="check"></i> Manutenção preventiva</li>
+          <li><i data-lucide="check"></i> Automações futuras <em>(roadmap)</em></li>
+        </ul>
+        <a href="#contato" class="btn btn-primary btn-full">
+          Conhecer Software <i data-lucide="arrow-right"></i>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPEN SOURCE ================= -->
+<section class="section section-opensource" id="opensource">
+  <div class="container opensource-grid">
+
+    <div class="opensource-text">
+      <span class="section-tag light"><i data-lucide="git-branch"></i> Open Source</span>
+      <h2>Construído aberto. Pensado para evoluir.</h2>
+      <p class="lead">
+        O GLTIdesk é desenvolvido de forma aberta. Código, decisões e roadmap ficam
+        visíveis para quem quiser acompanhar, auditar ou contribuir.
+      </p>
+
+      <ul class="opensource-list">
+        <li><i data-lucide="code-2"></i> Código aberto</li>
+        <li><i data-lucide="eye"></i> Transparência</li>
+        <li><i data-lucide="git-pull-request"></i> Colaboração</li>
+        <li><i data-lucide="users"></i> Comunidade</li>
+        <li><i data-lucide="book-open"></i> Documentação</li>
+        <li><i data-lucide="refresh-cw"></i> Desenvolvimento contínuo</li>
+      </ul>
+
+      <!-- Substituir href pelo repositório oficial quando disponível -->
+      <a href="https://github.com/friarthur/help_desk_it" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+        <i data-lucide="github"></i> Ver no GitHub
+      </a>
+    </div>
+
+    <figure class="opensource-image">
+      <img
+        src="/public/assets/img/repo.png"
+        alt="Repositório do GLTIdesk no GitHub com atividade de desenvolvimento"
+        loading="lazy"
+      >
+      <figcaption>Atividade do projeto no GitHub</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ================= PARCERIAS ================= -->
+<section class="section section-parceiros" id="parceiros">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="handshake"></i> Parcerias</span>
+      <h2>Quem constrói junto.</h2>
+      <p>Empresas e iniciativas que participam do desenvolvimento e da evolução do GLTIdesk.</p>
+    </div>
+
+    <div class="parceiros-grid">
+
+      <article class="parceiro-card">
+        <figure class="parceiro-logo-wrap">
+          <img
+            src="/public/assets/img/Modup_logo.jpg"
+            alt="MODUP Tecnologia"
+            class="partner-logo"
+            loading="lazy"
+          >
+        </figure>
+        <h3>MODUP Tecnologia</h3>
+        <p>Parceira no desenvolvimento e na visão estratégica do projeto GLTIdesk.</p>
+        <!-- Substituir href pelo site oficial -->
+        <a href="https://mod-uptecnologia.com/" class="parceiro-link" target="_blank" rel="noopener">
+          Visitar site <i data-lucide="external-link"></i>
+        </a>
+      </article>
+
+      <article class="parceiro-card">
+        <figure class="parceiro-logo-wrap">
+          <img
+            src="/public/assets/img/AgendWork_logo_oficial.png"
+            alt="AgendWork"
+            class="partner-logo"
+            loading="lazy"
+          >
+        </figure>
+        <h3>AgendWork</h3>
+        <p>Parceira na integração de soluções e automação de agendamentos.</p>
+        <a href="https://coral-owl-702741.hostingersite.com/" class="parceiro-link" target="_blank" rel="noopener">
+          Visitar site <i data-lucide="external-link"></i>
+        </a>
+      </article>
+
+      <article class="parceiro-card parceiro-card-vazio">
+        <div class="parceiro-logo-wrap parceiro-logo-placeholder">
+          <i data-lucide="plus-circle"></i>
+        </div>
+        <h3>Novos parceiros</h3>
+        <p>Estrutura preparada para adicionar novos parceiros do ecossistema.</p>
+        <a href="#contato" class="parceiro-link">
+          Entrar em contato <i data-lucide="arrow-right"></i>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<section class="section section-galeria" id="galeria">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag light"><i data-lucide="images"></i> Galeria</span>
+      <h2>Conheça o GLTIdesk por dentro.</h2>
+    </div>
+
+    <div class="galeria-grid">
+
+      <figure class="galeria-item galeria-grande">
+        <img
+          src="/public/assets/img/dash1.png"
+          alt="Dashboard do GLTIdesk Web"
+          loading="lazy"
+        >
+        <figcaption>Dashboard</figcaption>
+      </figure>
+
+      <figure class="galeria-item">
+        <img
+          src="/public/assets/img/platform/chamados.webp"
+          alt="Tela de chamados do GLTIdesk Web"
+          loading="lazy"
+        >
+        <figcaption>Chamados</figcaption>
+      </figure>
+
+      <figure class="galeria-item">
+        <img
+          src="/public/assets/img/platform/equipamentos.webp"
+          alt="Tela de equipamentos e inventário"
+          loading="lazy"
+        >
+        <figcaption>Equipamentos</figcaption>
+      </figure>
+
+      <figure class="galeria-item">
+        <img
+          src="/public/assets/img/platform/relatorios.webp"
+          alt="Tela de relatórios do GLTIdesk"
+          loading="lazy"
+        >
+        <figcaption>Relatórios</figcaption>
+      </figure>
+
+      <figure class="galeria-item galeria-medio">
+        <img
+          src="/public/assets/img/software/monitoring.webp"
+          alt="Monitoramento do GLTIdesk Software"
+          loading="lazy"
+        >
+        <figcaption>Monitoramento</figcaption>
+      </figure>
+
+      <figure class="galeria-item">
+        <img
+          src="/public/assets/img/platform/mobile.webp"
+          alt="GLTIdesk em dispositivo móvel"
+          loading="lazy"
+        >
+        <figcaption>Mobile</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="section section-contato" id="contato">
+  <div class="container contato-grid">
+
+    <div class="contato-info">
+      <span class="section-tag"><i data-lucide="mail"></i> Contato</span>
+      <h2>Vamos conversar sobre o seu suporte de TI.</h2>
+      <p>Preencha o formulário e nossa equipe entrará em contato. O envio será processado por um endpoint PHP responsável por encaminhar a mensagem por e-mail.</p>
+      <ul class="contato-detalhes">
+        <li><i data-lucide="mail"></i> contato@gltidesk.com</li>
+        <li><i data-lucide="github"></i> github.com/gltidesk</li>
+      </ul>
+    </div>
+
+    <!-- Substituir action pelo endpoint PHP real -->
+    <form class="contato-form" id="contatoForm" action="/contato" method="POST" novalidate>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" autocomplete="organization">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="assunto">Assunto *</label>
+        <input type="text" id="assunto" name="assunto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mensagem">Mensagem *</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-full">
+        Enviar mensagem <i data-lucide="send"></i>
+      </button>
+
+      <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="section section-cta-final">
+  <div class="container cta-final-content">
+    <h2>Organize seu suporte antes que o próximo problema apareça.</h2>
+    <p>Centralize atendimentos, mantenha histórico e prepare sua operação para uma gestão de TI mais inteligente.</p>
+    <div class="cta-final-botoes">
+      <a href="#planos" class="btn btn-primary btn-lg">Começar agora <i data-lucide="arrow-right"></i></a>
+      <a href="#plataforma" class="btn btn-outline-light btn-lg">Conhecer GLTIdesk</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <a href="#inicio" class="footer-logo">
+        <img src="/public/assets/img/logo_navbar.png" alt="GLTIdesk">
+      </a>
+      <p>Open Source Help Desk &amp; IT Management. Centralize atendimentos, organize sua operação e acompanhe seus dispositivos.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Produto">
+      <h4>Produto</h4>
+      <ul>
+        <li><a href="#plataforma">Plataforma</a></li>
+        <li><a href="#planos">GLTIdesk Web</a></li>
+        <li><a href="#planos">GLTIdesk Software</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Projeto">
+      <h4>Projeto</h4>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#opensource">Open Source</a></li>
+        <li><a href="https://github.com/friarthur/help_desk_it" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Ecossistema">
+      <h4>Ecossistema</h4>
+      <ul>
+        <li><a href="#parceiros">MODUP Tecnologia</a></li>
+        <li><a href="#parceiros">AgendWork</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Suporte">
+      <h4>Suporte</h4>
+      <ul>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#">Documentação</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Termos</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>GLTIdesk — Open Source Help Desk &amp; IT Management</p>
+      <p>&copy; <span id="anoAtual"></span> GLTIdesk. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/public/assets/js/index.js" defer></script>
 </body>
 </html>

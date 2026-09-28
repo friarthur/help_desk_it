@@ -1,112 +1,186 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-const body = document.body;
+/* =========================================================
+   GLTIdesk — script.js
+   ========================================================= */
+(function () {
+  'use strict';
 
-const openMenu = () => {
-    menuToggle.setAttribute('aria-expanded', 'true');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    mobileMenu.classList.add('open');
-    body.classList.add('menu-open');
-};
-
-const closeMenu = () => {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    mobileMenu.classList.remove('open');
-    body.classList.remove('menu-open');
-};
-
-const toggleMenu = () => {
-    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    if (isOpen) {
-        closeMenu();
-    } else {
-        openMenu();
+  const initIcons = () => {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
     }
-};
+  };
 
-menuToggle.addEventListener('click', toggleMenu);
+  /* ---------- Navbar ao scroll ---------- */
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    if (!navbar) return;
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-mobileLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-        closeMenu();
-    });
-});
+  /* ---------- Menu mobile ---------- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        closeMenu();
-    }
-});
+  const closeMenu = () => {
+    if (!navLinks || !navToggle) return;
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.innerHTML = '<i data-lucide="menu"></i>';
+    document.body.style.overflow = '';
+    initIcons();
+  };
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1080) {
-        closeMenu();
-    }
-});
+  const openMenu = () => {
+    if (!navLinks || !navToggle) return;
+    navLinks.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.innerHTML = '<i data-lucide="x"></i>';
+    document.body.style.overflow = 'hidden';
+    initIcons();
+  };
 
-document.addEventListener('click', (event) => {
-    const isClickInsideMenu = mobileMenu.contains(event.target);
-    const isClickOnToggle = menuToggle.contains(event.target);
-    const isMenuOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-
-    if (isMenuOpen && !isClickInsideMenu && !isClickOnToggle) {
-        closeMenu();
-    }
-});
-
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-const updateActiveLink = () => {
-    const scrollPosition = window.scrollY + 120;
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            navLinks.forEach((link) => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-
-            mobileNavLinks.forEach((link) => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.contains('open') ? closeMenu() : openMenu();
     });
 
-    if (scrollPosition < 200) {
-        navLinks.forEach((link) => link.classList.remove('active'));
-        mobileNavLinks.forEach((link) => link.classList.remove('active'));
-        document.querySelector('.nav-link[href="#"]')?.classList.add('active');
-        document.querySelector('.mobile-nav-link[href="#"]')?.classList.add('active');
-    }
-};
+    navLinks.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', closeMenu)
+    );
 
-let scrollTicking = false;
-window.addEventListener('scroll', () => {
-    if (!scrollTicking) {
-        window.requestAnimationFrame(() => {
-            updateActiveLink();
-            scrollTicking = false;
+    document.addEventListener('click', (e) => {
+      if (
+        navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && navLinks.classList.contains('open')) closeMenu();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  const initReveal = () => {
+    const selectors = [
+      '.section-header',
+      '.hero-text',
+      '.hero-mockup',
+      '.flow-step',
+      '.card',
+      '.case-area',
+      '.plataforma-text',
+      '.plataforma-image',
+      '.evolucao-step',
+      '.projeto-figure',
+      '.fluxo',
+      '.plano-card',
+      '.opensource-text',
+      '.opensource-image',
+      '.parceiro-card',
+      '.galeria-item',
+      '.contato-info',
+      '.contato-form',
+      '.cta-final-content'
+    ].join(',');
+
+    const elements = document.querySelectorAll(selectors);
+
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((el) => el.classList.add('reveal', 'visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         });
-        scrollTicking = true;
-    }
-});
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
 
-window.addEventListener('load', () => {
-    if (window.lucide) {
-        window.lucide.createIcons();
-    }
-    updateActiveLink();
-});
+    elements.forEach((el) => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  };
+
+  /* ---------- Formulário de contato ---------- */
+  const initForm = () => {
+    const form = document.getElementById('contatoForm');
+    const feedback = document.getElementById('formFeedback');
+    if (!form || !feedback) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        feedback.className = 'form-feedback visible erro';
+        feedback.textContent = 'Preencha todos os campos obrigatórios.';
+        return;
+      }
+
+      // TODO: enviar para endpoint PHP real
+      // fetch(form.action, { method: 'POST', body: new FormData(form) })
+      //   .then(res => { ... })
+      //   .catch(err => { ... })
+
+      feedback.className = 'form-feedback visible sucesso';
+      feedback.textContent = 'Mensagem enviada com sucesso. Em breve entraremos em contato.';
+      form.reset();
+
+      setTimeout(() => feedback.classList.remove('visible'), 6000);
+    });
+  };
+
+  /* ---------- Ano no footer ---------- */
+  const initYear = () => {
+    const el = document.getElementById('anoAtual');
+    if (el) el.textContent = new Date().getFullYear();
+  };
+
+  /* ---------- Smooth scroll (fallback) ---------- */
+  const initSmoothScroll = () => {
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+  };
+
+  /* ---------- Boot ---------- */
+  const boot = () => {
+    initIcons();
+    initReveal();
+    initForm();
+    initYear();
+    initSmoothScroll();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+  // Reforço: garante ícones após o Lucide carregar (defer)
+  window.addEventListener('load', initIcons);
+})();
